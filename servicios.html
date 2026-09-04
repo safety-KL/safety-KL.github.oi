@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JB Expansión y Desarrollo | Servicios</title>
+    <link rel="icon" type="image/png" href="JBlogoPNG.png">
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <img src="JBlogoPNG.png" alt="JB Expansión y Desarrollo" class="logo-img">
+            <div class="nav-links">
+                <a href="index.html">Inicio</a>
+                <a href="nosotros.html">Nosotros</a>
+                <a href="servicios.html">Servicios</a>
+                <a href="proyectos.html">Proyectos</a>
+                <a href="contacto.html">Contacto</a>
+            </div>
+        </nav>
+    </header>
+
+    <section style="padding-top: 160px;">
+        <div class="container">
+            <h2>Nuestros Servicios</h2>
+            <div class="services-grid">
+                <div class="card">Construcción Residencial</div>
+                <div class="card">Construcción Comercial</div>
+                <div class="card">Remodelaciones y Ampliaciones</div>
+                <div class="card">Diseño Arquitectónico</div>
+                <div class="card">Supervisión de Obras</div>
+                <div class="card">Urbanización y Desarrollo</div>
+            </div>
+        </div>
+    </section>
+    
+    <footer>
+        <p>© 2026 JB Expansión y Desarrollo • San Salvador, El Salvador</p>
+    </footer>
+
+    <script>
+        const tarjetas = document.querySelectorAll('.card');
+        const observador = new IntersectionObserver((entradas) => {
+            const elementosVisibles = entradas.filter(entrada => entrada.isIntersecting);
+            elementosVisibles.forEach((entrada, indice) => {
+                const tarjeta = entrada.target;
+                
+                tarjeta.classList.add('visible');
+                observador.unobserve(tarjeta);
+            });
+        }, { threshold: 0.05 });
+        tarjetas.forEach(tarjeta => observador.observe(tarjeta));
+    </script>
+</body>
+</html>

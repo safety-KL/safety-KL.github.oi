@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JB Expansión y Desarrollo | Nuestros Proyectos</title>
+    <link rel="icon" type="image/png" href="JBlogoPNG.png">
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <img src="JBlogoPNG.png" alt="JB Expansión y Desarrollo" class="logo-img">
+            <div class="nav-links">
+                <a href="index.html">Inicio</a>
+                <a href="nosotros.html">Nosotros</a>
+                <a href="servicios.html">Servicios</a>
+                <a href="proyectos.html">Proyectos</a>
+                <a href="contacto.html">Contacto</a>
+            </div>
+        </nav>
+    </header>
+
+    <section style="padding-top: 160px;">
+        <div class="container">
+            <h2>Proyectos Destacados</h2>
+            <div class="projects-grid">
+
+                <div class="card project-card">
+                    <img src="ImgProy1.png" alt="Residencial Horizonte Verde">
+                    <div class="project-overlay">
+                        <h3>Residencial Horizonte Verde</h3>
+                        <p>Complejo habitacional sostenible con áreas recreativas y sistemas de ahorro energético.</p>
+                    </div>
+                </div>
+
+                <div class="card project-card">
+                    <img src="ImgProy2.png" alt="Torre Empresarial Altus">
+                    <div class="project-overlay">
+                        <h3>Torre Empresarial Altus</h3>
+                        <p>Edificio corporativo de 15 niveles con tecnología inteligente.</p>
+                    </div>
+                </div>
+
+                <div class="card project-card">
+                    <img src="ImgProy3.png" alt="Plaza Nova Centro">
+                    <div class="project-overlay">
+                        <h3>Plaza Nova Centro</h3>
+                        <p>Centro comercial moderno con áreas verdes y de esparcimiento urbano.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2026 JB Expansión y Desarrollo • San Salvador, El Salvador</p>
+    </footer>
+
+    <script>
+        const tarjetas = document.querySelectorAll('.card');
+        const observador = new IntersectionObserver((entradas) => {
+            entradas.forEach(entrada => {
+                if (entrada.isIntersecting) {
+                    entrada.target.classList.add('visible');
+                    observador.unobserve(entrada.target);
+                }
+            });
+        }, { threshold: 0.1 });
+        tarjetas.forEach(tarjeta => observador.observe(tarjeta));
+    </script>
+</body>
+</html>

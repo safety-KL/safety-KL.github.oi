@@ -1,0 +1,23 @@
+<script>
+  // Selecciona todas las tarjetas
+  const tarjetas = document.querySelectorAll('.card');
+
+  // Configura el detector de visibilidad
+  const observador = new IntersectionObserver((entradas) => {
+    entradas.forEach(entrada => {
+      // Si la tarjeta es visible en la pantalla
+      if (entrada.isIntersecting) {
+        entrada.target.classList.add('visible');
+        // Opcional: deja de observar la tarjeta si solo quieres que se anime una vez
+        observador.unobserve(entrada.target);
+      }
+    });
+  }, {
+    threshold: 0.1 // Se activa cuando el 10% de la tarjeta es visible
+  });
+
+  // Activa el observador para cada tarjeta
+  tarjetas.forEach(tarjeta => {
+    observador.observe(tarjeta);
+  });
+</script>
